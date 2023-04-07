@@ -1,0 +1,8 @@
+.cache
+.github
+build
+dist
+node_modules
+
+*.hbs
+*.json
