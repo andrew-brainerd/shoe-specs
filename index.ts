@@ -7,7 +7,8 @@ import { Product, ProductData, Widget, WidgetValue } from 'types';
 
 const pupOptions: PuppeteerLaunchOptions = {
   headless: true,
-  defaultViewport: { width: 800, height: 1000 }
+  defaultViewport: { width: 800, height: 1000 },
+  timeout: 10000
 };
 
 if (process.platform === 'win32') {
@@ -16,10 +17,6 @@ if (process.platform === 'win32') {
 
 (async () => {
   const browser = await puppeteer.launch(pupOptions);
-  // const page = await browser.newPage();
-  // await page.waitForNetworkIdle();
-  // await page.goto(MENS_SHOES_URL);
-
   const mensShoePage = await openNewTab(browser, MENS_SHOES_URL);
 
   let productData = { products: [] } as ProductData;
@@ -33,7 +30,7 @@ if (process.platform === 'win32') {
         const productUrl = `${BASE_URL}${href}`;
 
         if (href) {
-          const productWidgets = await getProductWidgets(browser, productUrl);
+          const productWidgets = await getProductData(browser, productUrl);
 
           if (productWidgets) {
             productData.products.push(productWidgets);
@@ -63,46 +60,13 @@ if (process.platform === 'win32') {
   await browser.close();
 })();
 
-async function getProductWidgets(browser: Browser, productUrl: string) {
+async function getProductData(browser: Browser, productUrl: string) {
   try {
     const productPage = await openNewTab(browser, productUrl);
     const productName = await productPage.$eval('.m-buy-box-header__name', n => n.textContent);
-    const specWidgets = await productPage.$$('.m-features-widget');
+    const widgets = await productPage.$$('.m-features-widget');
 
-    const widgetsData = await Promise.all(
-      specWidgets.map(async widget => {
-        const widgetClass = await getClass(widget);
-        const widgetType = widgetClass.split('--')[1] ?? 'Unknown widget Type';
-        const widgetTitle = await widget.$eval('.m-info-label p', p => p.textContent);
-
-        let widgetValues: WidgetValue[] = [];
-
-        if (widgetClass.includes('accent-circle') || widgetClass.includes('accent-line')) {
-          const featureItems = await widget.$$('.a-feature-item');
-
-          await Promise.all(
-            featureItems.map(async featureItem => {
-              const featureName = await featureItem.evaluate(fi => fi.textContent);
-              const isMarked = (await getClass(featureItem)).includes('marked');
-
-              if (featureName) {
-                widgetValues.push({ name: featureName, isMarked });
-              }
-            })
-          );
-        } else {
-          console.warn('Unknown widget found', widgetClass);
-        }
-
-        const widgetData: Widget = {
-          title: widgetTitle || '',
-          type: widgetType,
-          values: widgetValues
-        };
-
-        return widgetData;
-      })
-    );
+    const widgetsData = await getWidgetsData(widgets)
 
     const name = productName ? productName.trim() : 'Product Name';
 
@@ -117,6 +81,43 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
   } catch (e) {
     console.log(chalk.yellow(`Error getting product specs from ${productUrl}`));
   }
+}
+
+async function getWidgetsData(widgets: ElementHandle<Element>[]) {
+  return await Promise.all(
+    widgets.map(async widget => {
+      const widgetClass = await getClass(widget);
+      const widgetType = widgetClass.split('--')[1] ?? 'Unknown widget Type';
+      const widgetTitle = await widget.$eval('.m-info-label p', p => p.textContent);
+
+      let widgetValues: WidgetValue[] = [];
+
+      if (widgetClass.includes('accent-circle') || widgetClass.includes('accent-line')) {
+        const featureItems = await widget.$$('.a-feature-item');
+
+        await Promise.all(
+          featureItems.map(async featureItem => {
+            const featureName = await featureItem.evaluate(fi => fi.textContent);
+            const isMarked = (await getClass(featureItem)).includes('marked');
+
+            if (featureName) {
+              widgetValues.push({ name: featureName, isMarked });
+            }
+          })
+        );
+      } else {
+        console.warn('Unknown widget found', widgetClass);
+      }
+
+      const widgetData: Widget = {
+        title: widgetTitle || '',
+        type: widgetType,
+        values: widgetValues
+      };
+
+      return widgetData;
+    })
+  );
 }
 
 async function openNewTab(browser: Browser, url: string) {
