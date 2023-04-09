@@ -4,6 +4,7 @@ import puppeteer, { ElementHandle, PuppeteerLaunchOptions } from 'puppeteer';
 import { BASE_URL, MENS_SHOES_URL } from 'constants/brooks';
 import { Browser } from 'puppeteer';
 import { Definition, Product, ProductData, Widget, WidgetValue } from 'types';
+import existingProductData from 'data.json';
 
 const pupOptions: PuppeteerLaunchOptions = {
   headless: true,
@@ -19,7 +20,7 @@ const pupOptions: PuppeteerLaunchOptions = {
   const browser = await puppeteer.launch(pupOptions);
   const mensShoePage = await openNewTab(browser, MENS_SHOES_URL);
 
-  let productData = { products: [] } as ProductData;
+  let productData = { products: [...existingProductData.products] } as ProductData;
 
   try {
     const productList = await mensShoePage.$$('#maincontent .o-products-grid ul > li .m-product-tile__body');

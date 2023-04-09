@@ -82,6 +82,87 @@
       ]
     },
     {
+      "name": "Adrenaline GTS 22",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": false
+            },
+            {
+              "name": "Support",
+              "isMarked": true
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "12mm"
+        },
+        {
+          "name": "Weight",
+          "value": "10.2oz / 289.2g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
       "name": "Anthem 5",
       "widgetsData": [
         {
@@ -137,6 +218,87 @@
         {
           "name": "Weight",
           "value": "9.1oz / 258.0g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Aurora-BL",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "6mm"
+        },
+        {
+          "name": "Weight",
+          "value": "8.5oz / 241.0g"
         },
         {
           "name": "Fit",
@@ -388,6 +550,168 @@
       ]
     },
     {
+      "name": "Ghost 14 GTX",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "11mm"
+        },
+        {
+          "name": "Weight",
+          "value": "10.7oz / 303.3g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Ghost 15",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "12mm"
+        },
+        {
+          "name": "Weight",
+          "value": "10.1oz / 286.3g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
       "name": "Ghost 15",
       "widgetsData": [
         {
@@ -522,6 +846,168 @@
             {
               "name": "Support",
               "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Track, Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "10mm"
+        },
+        {
+          "name": "Weight",
+          "value": "10.1oz / 286.3g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Glycerin 20",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Track, Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "10mm"
+        },
+        {
+          "name": "Weight",
+          "value": "10.1oz / 286.3g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Glycerin GTS 20",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": false
+            },
+            {
+              "name": "Support",
+              "isMarked": true
             },
             {
               "name": "Max support",
@@ -704,6 +1190,168 @@
         {
           "name": "Weight",
           "value": "9.4oz / 266.5g"
+        },
+        {
+          "name": "Fit",
+          "value": "Stealth Fit"
+        }
+      ]
+    },
+    {
+      "name": "Glycerin StealthFit 20",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Track, Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "10mm"
+        },
+        {
+          "name": "Weight",
+          "value": "9.4oz / 266.5g"
+        },
+        {
+          "name": "Fit",
+          "value": "Stealth Fit"
+        }
+      ]
+    },
+    {
+      "name": "Glycerin StealthFit GTS 20",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": false
+            },
+            {
+              "name": "Support",
+              "isMarked": true
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Track, Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "10mm"
+        },
+        {
+          "name": "Weight",
+          "value": "9.7oz / 275.0g"
         },
         {
           "name": "Fit",
@@ -955,6 +1603,326 @@
       ]
     },
     {
+      "name": "Hyperion Max",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": true
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Fast",
+              "isMarked": false
+            },
+            {
+              "name": "Faster",
+              "isMarked": false
+            },
+            {
+              "name": "Fastest",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "8mm"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Launch 9",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": true
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Fast",
+              "isMarked": true
+            },
+            {
+              "name": "Faster",
+              "isMarked": false
+            },
+            {
+              "name": "Fastest",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "10mm"
+        },
+        {
+          "name": "Weight",
+          "value": "8.2oz / 232.5g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Levitate 5",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Springy",
+              "isMarked": false
+            },
+            {
+              "name": "More Springy",
+              "isMarked": false
+            },
+            {
+              "name": "Most Springy",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "8mm"
+        },
+        {
+          "name": "Weight",
+          "value": "10.4oz / 294.8g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Levitate 6",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Springy",
+              "isMarked": false
+            },
+            {
+              "name": "More Springy",
+              "isMarked": false
+            },
+            {
+              "name": "Most Springy",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "8mm"
+        },
+        {
+          "name": "Weight",
+          "value": "10.5oz / 297.7g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
       "name": "Levitate GTS 6",
       "widgetsData": [
         {
@@ -1032,6 +2000,168 @@
         {
           "name": "Fit",
           "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Levitate GTS 6",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Springy",
+              "isMarked": false
+            },
+            {
+              "name": "More Springy",
+              "isMarked": false
+            },
+            {
+              "name": "Most Springy",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": false
+            },
+            {
+              "name": "Support",
+              "isMarked": true
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "8mm"
+        },
+        {
+          "name": "Weight",
+          "value": "10.9oz / 309.0g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Levitate StealthFit 6",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Springy",
+              "isMarked": false
+            },
+            {
+              "name": "More Springy",
+              "isMarked": false
+            },
+            {
+              "name": "Most Springy",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "8mm"
+        },
+        {
+          "name": "Weight",
+          "value": "9.9oz / 280.7g"
+        },
+        {
+          "name": "Fit",
+          "value": "Stealth Fit"
         }
       ]
     },
@@ -1154,6 +2284,132 @@
         {
           "name": "Weight",
           "value": "8.8oz / 249.5g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Revel 6",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "10mm"
+        },
+        {
+          "name": "Weight",
+          "value": "8.8oz / 249.5g"
+        },
+        {
+          "name": "Fit",
+          "value": "Classic Fit"
+        }
+      ]
+    },
+    {
+      "name": "Trace 2",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ],
+      "definitionsData": [
+        {
+          "name": "Surface",
+          "value": "Track, Road"
+        },
+        {
+          "name": "Midsole drop",
+          "value": "12mm"
+        },
+        {
+          "name": "Weight",
+          "value": "8.6oz / 243.8g"
         },
         {
           "name": "Fit",
