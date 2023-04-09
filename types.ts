@@ -1,4 +1,18 @@
-export interface Widget {
+export interface WidgetValue {
   name: string;
   isMarked: boolean;
+}
+
+export interface Widget {
+  title: string;
+  values: WidgetValue[];
+}
+
+export interface Product {
+  name: string;
+  widgetsData: Widget[];
+}
+
+export interface ProductData {
+  products: Product[];
 }

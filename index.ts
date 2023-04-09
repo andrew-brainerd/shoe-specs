@@ -3,8 +3,7 @@ import fs from 'fs';
 import puppeteer, { ElementHandle, PuppeteerLaunchOptions } from 'puppeteer';
 import { MENS_SHOES_URL } from 'constants/brooks';
 import { Browser } from 'puppeteer';
-import { Page } from 'puppeteer';
-import { Widget } from 'types';
+import { Product, ProductData, Widget, WidgetValue } from 'types';
 
 const pupOptions: PuppeteerLaunchOptions = {
   headless: true,
@@ -16,13 +15,13 @@ const pupOptions: PuppeteerLaunchOptions = {
 //   pupOptions.executablePath = 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe';
 // }
 
-console.log(chalk.yellow(`Getting list of men's shoes...`));
-
 (async () => {
   const browser = await puppeteer.launch(pupOptions);
   const page = await browser.newPage();
   await page.waitForNetworkIdle();
   await page.goto(MENS_SHOES_URL);
+
+  let productData = { products: [] } as ProductData;
 
   try {
     const productList = await page.$$('#maincontent .o-products-grid ul > li .m-product-tile__body');
@@ -32,8 +31,12 @@ console.log(chalk.yellow(`Getting list of men's shoes...`));
         const href = await el.$eval('a', link => link.getAttribute('href'));
         const productUrl = `https://www.brooksrunning.com${href}`;
 
-        if (href && index === 0) {
-          await getProductWidgets(browser, productUrl);
+        if (href && index < 10) {
+          const productsData = await getProductWidgets(browser, productUrl);
+
+          if (productsData) {
+            productData.products.push(productsData);
+          }
         }
       })
     );
@@ -42,21 +45,34 @@ console.log(chalk.yellow(`Getting list of men's shoes...`));
     await browser.close();
   }
 
+  fs.writeFile('preview.json', JSON.stringify(productData, null, 2), err => {
+    if (err) {
+      console.error(err);
+    }
+  });
+
+  fs.writeFile('data.json', JSON.stringify(productData), err => {
+    if (err) {
+      console.error(err);
+    }
+  });
+
   await browser.close();
 })();
 
 async function getProductWidgets(browser: Browser, productUrl: string) {
   try {
-    console.log(`Navigating to ${productUrl}\n`);
+    console.log(`Navigating to ${productUrl}`);
     const productPage = await openNewTab(browser, productUrl);
+    const productName = await productPage.$eval('.m-buy-box-header__name', n => n.textContent);
     const specWidgets = await productPage.$$('.m-features-widget');
 
-    const widgetData = await Promise.all(
+    const widgetsData = await Promise.all(
       specWidgets.map(async widget => {
         const widgetClass = await getClass(widget);
         const widgetTitle = await widget.$eval('.m-info-label p', p => p.textContent);
 
-        let widgetValues: Widget[] = [];
+        let widgetValues: WidgetValue[] = [];
 
         if (widgetClass.includes('accent-circle')) {
           const featureItems = await widget.$$('.a-feature-item');
@@ -78,21 +94,22 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
         }
 
         return {
-          title: widgetTitle,
+          title: widgetTitle || '',
           values: widgetValues
-        };
+        } as Widget;
       })
     );
 
-    console.log(widgetData);
+    console.log('Product Name', productName);
 
-    const data = JSON.stringify({ widgetData }, null, 2);
+    const name =  productName ? productName.trim() : 'Product Name'
 
-    fs.writeFile('data.json', data, err => {
-      if (err) {
-        console.error(err);
-      }
-    });
+    const product: Product = {
+      name,
+      widgetsData
+    };
+
+    return product;
   } catch (e) {
     console.error('Error getting product specs', e);
   }
@@ -100,13 +117,11 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
 
 async function getProductBestFor(browser: Browser, productUrl: string) {
   try {
-    console.log(`Navigating to ${productUrl}`);
     const productPage = await openNewTab(browser, productUrl);
 
     await wait(3000);
     const bestForContainer = await productPage.$$('.m-long-description__best-for');
-    const imgSrc = await bestForContainer[0].$eval('img', image => image.getAttribute('src'));
-    console.log('Icon', imgSrc);
+    return bestForContainer[0].$eval('img', image => image.getAttribute('src'));
   } catch (e) {
     console.error('Error getting product specs', e);
   }
@@ -114,7 +129,7 @@ async function getProductBestFor(browser: Browser, productUrl: string) {
 
 async function openNewTab(browser: Browser, url: string) {
   const page = await browser.newPage();
-  await page.goto(url).catch(e => console.log('Navigation Error', e));
+  await page.goto(url).catch(e => console.error('Navigation Error', e));
   await page.waitForNetworkIdle({ timeout: 5000 });
 
   return page;
