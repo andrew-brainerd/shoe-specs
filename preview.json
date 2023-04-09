@@ -1,6 +1,69 @@
 {
   "products": [
     {
+      "name": "Levitate 6",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Springy",
+              "isMarked": false
+            },
+            {
+              "name": "More Springy",
+              "isMarked": false
+            },
+            {
+              "name": "Most Springy",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Glycerin StealthFit 20",
       "widgetsData": [
         {
@@ -28,49 +91,38 @@
         {
           "title": "Experience level",
           "type": "accent-line",
-          "values": []
-        },
-        {
-          "title": "Support",
-          "type": "accent-line",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Adrenaline GTS 22",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "type": "accent-circle",
           "values": [
             {
-              "name": "Cushion",
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Most Cushion",
               "isMarked": true
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
-              "isMarked": false
-            },
-            {
-              "name": "Trail",
-              "isMarked": false
             }
           ]
         },
         {
-          "title": "Experience level",
-          "type": "accent-line",
-          "values": []
-        },
-        {
           "title": "Support",
           "type": "accent-line",
-          "values": []
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
         }
       ]
     },
@@ -102,12 +154,25 @@
         {
           "title": "Support",
           "type": "accent-line",
-          "values": []
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
         }
       ]
     },
     {
-      "name": "Ghost 15",
+      "name": "Adrenaline GTS 22",
       "widgetsData": [
         {
           "title": "Experience",
@@ -134,128 +199,43 @@
         {
           "title": "Experience level",
           "type": "accent-line",
-          "values": []
-        },
-        {
-          "title": "Support",
-          "type": "accent-line",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Levitate 6",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "type": "accent-circle",
           "values": [
             {
-              "name": "Cushion",
+              "name": "Neutral Cushion",
               "isMarked": false
             },
             {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
+              "name": "More Cushion",
               "isMarked": true
             },
             {
-              "name": "Trail",
+              "name": "Most Cushion",
               "isMarked": false
             }
           ]
         },
         {
-          "title": "Experience level",
-          "type": "accent-line",
-          "values": []
-        },
-        {
           "title": "Support",
           "type": "accent-line",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Levitate GTS 6",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "type": "accent-circle",
           "values": [
             {
-              "name": "Cushion",
+              "name": "Neutral",
               "isMarked": false
             },
             {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
+              "name": "Support",
               "isMarked": true
             },
             {
-              "name": "Trail",
+              "name": "Max support",
               "isMarked": false
             }
           ]
-        },
-        {
-          "title": "Experience level",
-          "type": "accent-line",
-          "values": []
-        },
-        {
-          "title": "Support",
-          "type": "accent-line",
-          "values": []
         }
       ]
     },
     {
-      "name": "Levitate StealthFit 6",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "type": "accent-circle",
-          "values": [
-            {
-              "name": "Cushion",
-              "isMarked": false
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
-              "isMarked": true
-            },
-            {
-              "name": "Trail",
-              "isMarked": false
-            }
-          ]
-        },
-        {
-          "title": "Experience level",
-          "type": "accent-line",
-          "values": []
-        },
-        {
-          "title": "Support",
-          "type": "accent-line",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Dyad 11",
+      "name": "Anthem 5",
       "widgetsData": [
         {
           "title": "Experience",
@@ -280,19 +260,27 @@
           ]
         },
         {
-          "title": "Experience level",
-          "type": "accent-line",
-          "values": []
-        },
-        {
           "title": "Support",
           "type": "accent-line",
-          "values": []
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
         }
       ]
     },
     {
-      "name": "Addiction GTS 15",
+      "name": "Hyperion Max",
       "widgetsData": [
         {
           "title": "Experience",
@@ -300,11 +288,11 @@
           "values": [
             {
               "name": "Cushion",
-              "isMarked": true
+              "isMarked": false
             },
             {
               "name": "Speed",
-              "isMarked": false
+              "isMarked": true
             },
             {
               "name": "Energize",
@@ -319,49 +307,38 @@
         {
           "title": "Experience level",
           "type": "accent-line",
-          "values": []
-        },
-        {
-          "title": "Support",
-          "type": "accent-line",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Glycerin 20",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "type": "accent-circle",
           "values": [
             {
-              "name": "Cushion",
+              "name": "Fast",
+              "isMarked": false
+            },
+            {
+              "name": "Faster",
+              "isMarked": false
+            },
+            {
+              "name": "Fastest",
               "isMarked": true
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
-              "isMarked": false
-            },
-            {
-              "name": "Trail",
-              "isMarked": false
             }
           ]
         },
         {
-          "title": "Experience level",
-          "type": "accent-line",
-          "values": []
-        },
-        {
           "title": "Support",
           "type": "accent-line",
-          "values": []
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
         }
       ]
     },
@@ -393,49 +370,38 @@
         {
           "title": "Experience level",
           "type": "accent-line",
-          "values": []
-        },
-        {
-          "title": "Support",
-          "type": "accent-line",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Ghost 14",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "type": "accent-circle",
           "values": [
             {
-              "name": "Cushion",
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Most Cushion",
               "isMarked": true
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
-              "isMarked": false
-            },
-            {
-              "name": "Trail",
-              "isMarked": false
             }
           ]
         },
         {
-          "title": "Experience level",
-          "type": "accent-line",
-          "values": []
-        },
-        {
           "title": "Support",
           "type": "accent-line",
-          "values": []
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": false
+            },
+            {
+              "name": "Support",
+              "isMarked": true
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
         }
       ]
     },
@@ -467,44 +433,25 @@
         {
           "title": "Support",
           "type": "accent-line",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Revel 6",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "type": "accent-circle",
           "values": [
             {
-              "name": "Cushion",
-              "isMarked": false
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
+              "name": "Neutral",
               "isMarked": true
             },
             {
-              "name": "Trail",
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
               "isMarked": false
             }
           ]
-        },
-        {
-          "title": "Support",
-          "type": "accent-line",
-          "values": []
         }
       ]
     },
     {
-      "name": "Aurora-BL",
+      "name": "Ghost 14",
       "widgetsData": [
         {
           "title": "Experience",
@@ -531,17 +478,106 @@
         {
           "title": "Experience level",
           "type": "accent-line",
-          "values": []
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": false
+            }
+          ]
         },
         {
           "title": "Support",
           "type": "accent-line",
-          "values": []
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
         }
       ]
     },
     {
-      "name": "Glycerin StealthFit GTS 20",
+      "name": "Levitate StealthFit 6",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Springy",
+              "isMarked": false
+            },
+            {
+              "name": "More Springy",
+              "isMarked": false
+            },
+            {
+              "name": "Most Springy",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dyad 11",
       "widgetsData": [
         {
           "title": "Experience",
@@ -568,12 +604,191 @@
         {
           "title": "Experience level",
           "type": "accent-line",
-          "values": []
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": false
+            }
+          ]
         },
         {
           "title": "Support",
           "type": "accent-line",
-          "values": []
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Glycerin 20",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "More Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Most Cushion",
+              "isMarked": true
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Signal 3",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Range 2",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": [
+            {
+              "name": "Neutral",
+              "isMarked": true
+            },
+            {
+              "name": "Support",
+              "isMarked": false
+            },
+            {
+              "name": "Max support",
+              "isMarked": false
+            }
+          ]
         }
       ]
     }

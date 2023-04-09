@@ -75,7 +75,7 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
 
         let widgetValues: WidgetValue[] = [];
 
-        if (widgetClass.includes('accent-circle')) {
+        if (widgetClass.includes('accent-circle') || widgetClass.includes('accent-line')) {
           const featureItems = await widget.$$('.a-feature-item');
 
           await Promise.all(
@@ -88,8 +88,6 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
               }
             })
           );
-        } else if (widgetClass.includes('accent-line')) {
-          // console.log('Accent Line');
         } else {
           console.warn('Unknown widget found', widgetClass);
         }
@@ -115,7 +113,8 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
 
     return product;
   } catch (e) {
-    console.error('Error getting product specs', e);
+    // console.error('Error getting product specs', e);
+    chalk.red(`Error getting product specs at ${productUrl}`);
   }
 }
 
