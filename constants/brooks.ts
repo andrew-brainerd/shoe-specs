@@ -1,4 +1,4 @@
-const BASE_URL = 'https://www.brooksrunning.com/en_us';
+const BASE_URL = 'https://www.brooksrunning.com';
 
 const HYPERION_MAX_MENS_ID = 110390;
 
