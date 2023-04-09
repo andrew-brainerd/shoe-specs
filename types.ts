@@ -5,6 +5,7 @@ export interface WidgetValue {
 
 export interface Widget {
   title: string;
+  type: string;
   values: WidgetValue[];
 }
 

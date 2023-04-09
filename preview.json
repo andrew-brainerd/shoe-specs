@@ -1,10 +1,11 @@
 {
   "products": [
     {
-      "name": "Levitate 6",
+      "name": "Hyperion Max",
       "widgetsData": [
         {
           "title": "Experience",
+          "type": "accent-circle",
           "values": [
             {
               "name": "Cushion",
@@ -12,41 +13,7 @@
             },
             {
               "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
               "isMarked": true
-            },
-            {
-              "name": "Trail",
-              "isMarked": false
-            }
-          ]
-        },
-        {
-          "title": "Experience level",
-          "values": []
-        },
-        {
-          "title": "Support",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Glycerin StealthFit 20",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "values": [
-            {
-              "name": "Cushion",
-              "isMarked": true
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
             },
             {
               "name": "Energize",
@@ -60,112 +27,12 @@
         },
         {
           "title": "Experience level",
+          "type": "accent-line",
           "values": []
         },
         {
           "title": "Support",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Ghost 15",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "values": [
-            {
-              "name": "Cushion",
-              "isMarked": true
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
-              "isMarked": false
-            },
-            {
-              "name": "Trail",
-              "isMarked": false
-            }
-          ]
-        },
-        {
-          "title": "Experience level",
-          "values": []
-        },
-        {
-          "title": "Support",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Ghost 14",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "values": [
-            {
-              "name": "Cushion",
-              "isMarked": true
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
-              "isMarked": false
-            },
-            {
-              "name": "Trail",
-              "isMarked": false
-            }
-          ]
-        },
-        {
-          "title": "Experience level",
-          "values": []
-        },
-        {
-          "title": "Support",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Levitate StealthFit 6",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "values": [
-            {
-              "name": "Cushion",
-              "isMarked": false
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
-              "isMarked": true
-            },
-            {
-              "name": "Trail",
-              "isMarked": false
-            }
-          ]
-        },
-        {
-          "title": "Experience level",
-          "values": []
-        },
-        {
-          "title": "Support",
+          "type": "accent-line",
           "values": []
         }
       ]
@@ -175,6 +42,7 @@
       "widgetsData": [
         {
           "title": "Experience",
+          "type": "accent-circle",
           "values": [
             {
               "name": "Cushion",
@@ -196,19 +64,22 @@
         },
         {
           "title": "Experience level",
+          "type": "accent-line",
           "values": []
         },
         {
           "title": "Support",
+          "type": "accent-line",
           "values": []
         }
       ]
     },
     {
-      "name": "Glycerin GTS 20",
+      "name": "Glycerin StealthFit 20",
       "widgetsData": [
         {
           "title": "Experience",
+          "type": "accent-circle",
           "values": [
             {
               "name": "Cushion",
@@ -230,27 +101,30 @@
         },
         {
           "title": "Experience level",
+          "type": "accent-line",
           "values": []
         },
         {
           "title": "Support",
+          "type": "accent-line",
           "values": []
         }
       ]
     },
     {
-      "name": "Hyperion Max",
+      "name": "Ghost 15",
       "widgetsData": [
         {
           "title": "Experience",
+          "type": "accent-circle",
           "values": [
             {
               "name": "Cushion",
-              "isMarked": false
+              "isMarked": true
             },
             {
               "name": "Speed",
-              "isMarked": true
+              "isMarked": false
             },
             {
               "name": "Energize",
@@ -264,40 +138,12 @@
         },
         {
           "title": "Experience level",
+          "type": "accent-line",
           "values": []
         },
         {
           "title": "Support",
-          "values": []
-        }
-      ]
-    },
-    {
-      "name": "Revel 6",
-      "widgetsData": [
-        {
-          "title": "Experience",
-          "values": [
-            {
-              "name": "Cushion",
-              "isMarked": false
-            },
-            {
-              "name": "Speed",
-              "isMarked": false
-            },
-            {
-              "name": "Energize",
-              "isMarked": true
-            },
-            {
-              "name": "Trail",
-              "isMarked": false
-            }
-          ]
-        },
-        {
-          "title": "Support",
+          "type": "accent-line",
           "values": []
         }
       ]
@@ -307,6 +153,7 @@
       "widgetsData": [
         {
           "title": "Experience",
+          "type": "accent-circle",
           "values": [
             {
               "name": "Cushion",
@@ -328,10 +175,12 @@
         },
         {
           "title": "Experience level",
+          "type": "accent-line",
           "values": []
         },
         {
           "title": "Support",
+          "type": "accent-line",
           "values": []
         }
       ]

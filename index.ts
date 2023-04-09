@@ -31,7 +31,7 @@ const pupOptions: PuppeteerLaunchOptions = {
         const href = await el.$eval('a', link => link.getAttribute('href'));
         const productUrl = `https://www.brooksrunning.com${href}`;
 
-        if (href && index < 10) {
+        if (href) {
           const productsData = await getProductWidgets(browser, productUrl);
 
           if (productsData) {
@@ -70,6 +70,7 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
     const widgetsData = await Promise.all(
       specWidgets.map(async widget => {
         const widgetClass = await getClass(widget);
+        const widgetType = widgetClass.split('--')[1] ?? 'Unknown widget Type';
         const widgetTitle = await widget.$eval('.m-info-label p', p => p.textContent);
 
         let widgetValues: WidgetValue[] = [];
@@ -93,16 +94,19 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
           console.warn('Unknown widget found', widgetClass);
         }
 
-        return {
+        const widgetData: Widget = {
           title: widgetTitle || '',
+          type: widgetType,
           values: widgetValues
-        } as Widget;
+        };
+
+        return widgetData;
       })
     );
 
-    console.log('Product Name', productName);
+    console.log('Product Name:', productName?.trim());
 
-    const name =  productName ? productName.trim() : 'Product Name'
+    const name = productName ? productName.trim() : 'Product Name';
 
     const product: Product = {
       name,
