@@ -1,11 +1,11 @@
 import chalk from 'chalk';
-import puppeteer, { PuppeteerLaunchOptions } from 'puppeteer';
+import puppeteer, { ElementHandle, PuppeteerLaunchOptions } from 'puppeteer';
 import { MENS_SHOES_URL } from 'constants/brooks';
 import { Browser } from 'puppeteer';
 import { Page } from 'puppeteer';
 
 const pupOptions: PuppeteerLaunchOptions = {
-  headless: false,
+  headless: true,
   slowMo: 500,
   defaultViewport: { width: 800, height: 1000 }
 };
@@ -20,12 +20,10 @@ console.log(chalk.yellow(`Getting list of men's shoes...`));
   const browser = await puppeteer.launch(pupOptions);
   const page = await browser.newPage();
   await page.waitForNetworkIdle();
-
   await page.goto(MENS_SHOES_URL);
-  // await page.goto('https://www.brooksrunning.com/en_us/mens-road-running-shoes/');
+
   try {
     const pageTitle = await page.title();
-    console.log('Landing Page:', pageTitle);
 
     try {
       const productList = await page.$$('#maincontent .o-products-grid ul > li .m-product-tile__body');
@@ -36,7 +34,7 @@ console.log(chalk.yellow(`Getting list of men's shoes...`));
           const productUrl = `https://www.brooksrunning.com${href}`;
 
           if (href && index === 0) {
-            await getProductSpecs(browser, productUrl);
+            await getProductWidgets(browser, productUrl);
           }
         })
       );
@@ -51,23 +49,45 @@ console.log(chalk.yellow(`Getting list of men's shoes...`));
   await browser.close();
 })();
 
-async function getProductSpecs(browser: Browser, productUrl: string) {
+async function getProductWidgets(browser: Browser, productUrl: string) {
   try {
-    console.log(`Navigating to ${productUrl}`);
+    console.log(`Navigating to ${productUrl}\n`);
     const productPage = await openNewTab(browser, productUrl);
 
     const specWidgets = await productPage.$$('.m-features-widget');
 
-    const data = await Promise.all(
+    const widgetData = await Promise.all(
       specWidgets.map(async widget => {
+        const widgetClass = await getClass(widget);
         const widgetTitle = await widget.$eval('.m-info-label p', p => p.textContent);
+
+        let widgetValues: string[] = [];
+
+        if (widgetClass.includes('accent-circle')) {
+          const featureItems = await widget.$$('.a-feature-item');
+
+          await Promise.all(
+            featureItems.map(async featureItem => {
+              const featureName = await featureItem.evaluate(fi => fi.textContent);
+
+              if (featureName) {
+                widgetValues.push(featureName);
+              }
+            })
+          );
+        } else if (widgetClass.includes('accent-line')) {
+          // console.log('Accent Line');
+        } else {
+          console.warn('Unknown widget found', widgetClass);
+        }
         return {
-          title: widgetTitle
+          title: widgetTitle,
+          values: widgetValues
         };
       })
     );
 
-    console.log(data);
+    console.log(widgetData);
   } catch (e) {
     console.error('Error getting product specs', e);
   }
@@ -93,6 +113,10 @@ async function openNewTab(browser: Browser, url: string) {
   await page.waitForNetworkIdle({ timeout: 5000 });
 
   return page;
+}
+
+async function getClass(elementHandle: ElementHandle) {
+  return await (await elementHandle.getProperty('className')).jsonValue();
 }
 
 async function wait(time: number) {
