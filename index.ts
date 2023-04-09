@@ -35,8 +35,6 @@ if (process.platform === 'win32') {
           if (productWidgets) {
             productData.products.push(productWidgets);
           }
-
-          const productsData = { ...productWidgets };
         }
       })
     );
@@ -44,6 +42,8 @@ if (process.platform === 'win32') {
     console.error('Error happened here', e);
     await browser.close();
   }
+
+  productData.products.sort((prodA, prodB) => prodA.name < prodB.name ? -1 : 1);
 
   fs.writeFile('preview.json', JSON.stringify(productData, null, 2), err => {
     if (err) {
