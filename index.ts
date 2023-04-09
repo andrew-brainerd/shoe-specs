@@ -33,11 +33,10 @@ console.log(chalk.yellow(`Getting list of men's shoes...`));
       await Promise.all(
         productList.map(async (el, index) => {
           const href = await el.$eval('a', link => link.getAttribute('href'));
+          const productUrl = `https://www.brooksrunning.com${href}`;
 
-          const nextPage = `https://www.brooksrunning.com${href}`;
-
-          if (href && index < 3) {
-            await getProductSpecs(browser, page, nextPage);
+          if (href && index === 0) {
+            await getProductSpecs(browser, productUrl);
           }
         })
       );
@@ -52,22 +51,48 @@ console.log(chalk.yellow(`Getting list of men's shoes...`));
   await browser.close();
 })();
 
-async function getProductSpecs(browser: Browser, page: Page, productUrl: string) {
+async function getProductSpecs(browser: Browser, productUrl: string) {
   try {
     console.log(`Navigating to ${productUrl}`);
-    const productPage = await browser.newPage();
-    await productPage.goto(productUrl).catch(e => console.log('Navigation Error', e));
-    await productPage.waitForNetworkIdle({ timeout: 5000 });
-    // const pageTitle = await page.title();
-    // console.log('Product Page:', pageTitle);
+    const productPage = await openNewTab(browser, productUrl);
+
+    const specWidgets = await productPage.$$('.m-features-widget');
+
+    const data = await Promise.all(
+      specWidgets.map(async widget => {
+        const widgetTitle = await widget.$eval('.m-info-label p', p => p.textContent);
+        return {
+          title: widgetTitle
+        };
+      })
+    );
+
+    console.log(data);
+  } catch (e) {
+    console.error('Error getting product specs', e);
+  }
+}
+
+async function getProductBestFor(browser: Browser, productUrl: string) {
+  try {
+    console.log(`Navigating to ${productUrl}`);
+    const productPage = await openNewTab(browser, productUrl);
 
     await wait(3000);
     const bestForContainer = await productPage.$$('.m-long-description__best-for');
     const imgSrc = await bestForContainer[0].$eval('img', image => image.getAttribute('src'));
     console.log('Icon', imgSrc);
   } catch (e) {
-    // console.error('Error getting product specs', e);
+    console.error('Error getting product specs', e);
   }
+}
+
+async function openNewTab(browser: Browser, url: string) {
+  const page = await browser.newPage();
+  await page.goto(url).catch(e => console.log('Navigation Error', e));
+  await page.waitForNetworkIdle({ timeout: 5000 });
+
+  return page;
 }
 
 async function wait(time: number) {
