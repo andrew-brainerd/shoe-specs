@@ -1,7 +1,150 @@
 {
   "products": [
     {
-      "name": "Hyperion Max",
+      "name": "Glycerin StealthFit 20",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": []
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Adrenaline GTS 22",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": []
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Transmit 3",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Ghost 15",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": []
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Levitate 6",
       "widgetsData": [
         {
           "title": "Experience",
@@ -13,7 +156,155 @@
             },
             {
               "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
               "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": []
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Levitate GTS 6",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": []
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Levitate StealthFit 6",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": []
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Dyad 11",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": []
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Addiction GTS 15",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
             },
             {
               "name": "Energize",
@@ -75,7 +366,7 @@
       ]
     },
     {
-      "name": "Glycerin StealthFit 20",
+      "name": "Glycerin GTS 20",
       "widgetsData": [
         {
           "title": "Experience",
@@ -112,7 +403,7 @@
       ]
     },
     {
-      "name": "Ghost 15",
+      "name": "Ghost 14",
       "widgetsData": [
         {
           "title": "Experience",
@@ -149,7 +440,108 @@
       ]
     },
     {
-      "name": "Adrenaline GTS 22",
+      "name": "Trace 2",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Revel 6",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": false
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": true
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Aurora-BL",
+      "widgetsData": [
+        {
+          "title": "Experience",
+          "type": "accent-circle",
+          "values": [
+            {
+              "name": "Cushion",
+              "isMarked": true
+            },
+            {
+              "name": "Speed",
+              "isMarked": false
+            },
+            {
+              "name": "Energize",
+              "isMarked": false
+            },
+            {
+              "name": "Trail",
+              "isMarked": false
+            }
+          ]
+        },
+        {
+          "title": "Experience level",
+          "type": "accent-line",
+          "values": []
+        },
+        {
+          "title": "Support",
+          "type": "accent-line",
+          "values": []
+        }
+      ]
+    },
+    {
+      "name": "Glycerin StealthFit GTS 20",
       "widgetsData": [
         {
           "title": "Experience",
