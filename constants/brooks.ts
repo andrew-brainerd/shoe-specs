@@ -1,9 +1,3 @@
-const BASE_URL = 'https://www.brooksrunning.com';
+export const BASE_URL = 'https://www.brooksrunning.com';
 
-const HYPERION_MAX_MENS_ID = 110390;
-
-export const MENS_SHOES_URL = `${BASE_URL}/mens-road-running-shoes`;
-
-export const SHOE_IDS = [
-  HYPERION_MAX_MENS_ID
-];
+export const MENS_SHOES_URL = `${BASE_URL}/mens-road-running-shoes?sz=50`;

@@ -1,42 +1,45 @@
 import chalk from 'chalk';
 import fs from 'fs';
 import puppeteer, { ElementHandle, PuppeteerLaunchOptions } from 'puppeteer';
-import { MENS_SHOES_URL } from 'constants/brooks';
+import { BASE_URL, MENS_SHOES_URL } from 'constants/brooks';
 import { Browser } from 'puppeteer';
 import { Product, ProductData, Widget, WidgetValue } from 'types';
 
 const pupOptions: PuppeteerLaunchOptions = {
   headless: true,
-  // slowMo: 500,
   defaultViewport: { width: 800, height: 1000 }
 };
 
-// if (process.platform === 'win32') {
-//   pupOptions.executablePath = 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe';
-// }
+if (process.platform === 'win32') {
+  pupOptions.executablePath = 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe';
+}
 
 (async () => {
   const browser = await puppeteer.launch(pupOptions);
-  const page = await browser.newPage();
-  await page.waitForNetworkIdle();
-  await page.goto(MENS_SHOES_URL);
+  // const page = await browser.newPage();
+  // await page.waitForNetworkIdle();
+  // await page.goto(MENS_SHOES_URL);
+
+  const mensShoePage = await openNewTab(browser, MENS_SHOES_URL);
 
   let productData = { products: [] } as ProductData;
 
   try {
-    const productList = await page.$$('#maincontent .o-products-grid ul > li .m-product-tile__body');
+    const productList = await mensShoePage.$$('#maincontent .o-products-grid ul > li .m-product-tile__body');
 
     await Promise.all(
       productList.map(async (el, index) => {
         const href = await el.$eval('a', link => link.getAttribute('href'));
-        const productUrl = `https://www.brooksrunning.com${href}`;
+        const productUrl = `${BASE_URL}${href}`;
 
         if (href) {
-          const productsData = await getProductWidgets(browser, productUrl);
+          const productWidgets = await getProductWidgets(browser, productUrl);
 
-          if (productsData) {
-            productData.products.push(productsData);
+          if (productWidgets) {
+            productData.products.push(productWidgets);
           }
+
+          const productsData = { ...productWidgets };
         }
       })
     );
@@ -62,7 +65,6 @@ const pupOptions: PuppeteerLaunchOptions = {
 
 async function getProductWidgets(browser: Browser, productUrl: string) {
   try {
-    console.log(`Navigating to ${productUrl}`);
     const productPage = await openNewTab(browser, productUrl);
     const productName = await productPage.$eval('.m-buy-box-header__name', n => n.textContent);
     const specWidgets = await productPage.$$('.m-features-widget');
@@ -102,8 +104,6 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
       })
     );
 
-    console.log('Product Name:', productName?.trim());
-
     const name = productName ? productName.trim() : 'Product Name';
 
     const product: Product = {
@@ -111,22 +111,11 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
       widgetsData
     };
 
+    console.log(`Got specs for ${chalk.blue(product.name)}`);
+
     return product;
   } catch (e) {
-    // console.error('Error getting product specs', e);
-    chalk.red(`Error getting product specs at ${productUrl}`);
-  }
-}
-
-async function getProductBestFor(browser: Browser, productUrl: string) {
-  try {
-    const productPage = await openNewTab(browser, productUrl);
-
-    await wait(3000);
-    const bestForContainer = await productPage.$$('.m-long-description__best-for');
-    return bestForContainer[0].$eval('img', image => image.getAttribute('src'));
-  } catch (e) {
-    console.error('Error getting product specs', e);
+    console.log(chalk.yellow(`Error getting product specs from ${productUrl}`));
   }
 }
 
