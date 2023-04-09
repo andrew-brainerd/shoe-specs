@@ -1,0 +1,33 @@
+{
+  "widgetData": [
+    {
+      "title": "Experience",
+      "values": [
+        {
+          "name": "Cushion",
+          "isMarked": true
+        },
+        {
+          "name": "Speed",
+          "isMarked": false
+        },
+        {
+          "name": "Energize",
+          "isMarked": false
+        },
+        {
+          "name": "Trail",
+          "isMarked": false
+        }
+      ]
+    },
+    {
+      "title": "Experience level",
+      "values": []
+    },
+    {
+      "title": "Support",
+      "values": []
+    }
+  ]
+}

@@ -1,18 +1,20 @@
 import chalk from 'chalk';
+import fs from 'fs';
 import puppeteer, { ElementHandle, PuppeteerLaunchOptions } from 'puppeteer';
 import { MENS_SHOES_URL } from 'constants/brooks';
 import { Browser } from 'puppeteer';
 import { Page } from 'puppeteer';
+import { Widget } from 'types';
 
 const pupOptions: PuppeteerLaunchOptions = {
   headless: true,
-  slowMo: 500,
+  // slowMo: 500,
   defaultViewport: { width: 800, height: 1000 }
 };
 
-if (process.platform === 'win32') {
-  pupOptions.executablePath = 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe';
-}
+// if (process.platform === 'win32') {
+//   pupOptions.executablePath = 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe';
+// }
 
 console.log(chalk.yellow(`Getting list of men's shoes...`));
 
@@ -23,27 +25,21 @@ console.log(chalk.yellow(`Getting list of men's shoes...`));
   await page.goto(MENS_SHOES_URL);
 
   try {
-    const pageTitle = await page.title();
+    const productList = await page.$$('#maincontent .o-products-grid ul > li .m-product-tile__body');
 
-    try {
-      const productList = await page.$$('#maincontent .o-products-grid ul > li .m-product-tile__body');
+    await Promise.all(
+      productList.map(async (el, index) => {
+        const href = await el.$eval('a', link => link.getAttribute('href'));
+        const productUrl = `https://www.brooksrunning.com${href}`;
 
-      await Promise.all(
-        productList.map(async (el, index) => {
-          const href = await el.$eval('a', link => link.getAttribute('href'));
-          const productUrl = `https://www.brooksrunning.com${href}`;
-
-          if (href && index === 0) {
-            await getProductWidgets(browser, productUrl);
-          }
-        })
-      );
-    } catch (e) {
-      console.error('Error happened here', e);
-      await browser.close();
-    }
+        if (href && index === 0) {
+          await getProductWidgets(browser, productUrl);
+        }
+      })
+    );
   } catch (e) {
-    console.error('Something fucked up', e);
+    console.error('Error happened here', e);
+    await browser.close();
   }
 
   await browser.close();
@@ -53,7 +49,6 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
   try {
     console.log(`Navigating to ${productUrl}\n`);
     const productPage = await openNewTab(browser, productUrl);
-
     const specWidgets = await productPage.$$('.m-features-widget');
 
     const widgetData = await Promise.all(
@@ -61,7 +56,7 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
         const widgetClass = await getClass(widget);
         const widgetTitle = await widget.$eval('.m-info-label p', p => p.textContent);
 
-        let widgetValues: string[] = [];
+        let widgetValues: Widget[] = [];
 
         if (widgetClass.includes('accent-circle')) {
           const featureItems = await widget.$$('.a-feature-item');
@@ -69,9 +64,10 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
           await Promise.all(
             featureItems.map(async featureItem => {
               const featureName = await featureItem.evaluate(fi => fi.textContent);
+              const isMarked = (await getClass(featureItem)).includes('marked');
 
               if (featureName) {
-                widgetValues.push(featureName);
+                widgetValues.push({ name: featureName, isMarked });
               }
             })
           );
@@ -80,6 +76,7 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
         } else {
           console.warn('Unknown widget found', widgetClass);
         }
+
         return {
           title: widgetTitle,
           values: widgetValues
@@ -88,6 +85,14 @@ async function getProductWidgets(browser: Browser, productUrl: string) {
     );
 
     console.log(widgetData);
+
+    const data = JSON.stringify({ widgetData }, null, 2);
+
+    fs.writeFile('data.json', data, err => {
+      if (err) {
+        console.error(err);
+      }
+    });
   } catch (e) {
     console.error('Error getting product specs', e);
   }
