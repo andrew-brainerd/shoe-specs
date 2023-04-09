@@ -12,8 +12,14 @@ export interface Widget {
 export interface Product {
   name: string;
   widgetsData: Widget[];
+  definitionsData: Definition[];
 }
 
 export interface ProductData {
   products: Product[];
+}
+
+export interface Definition {
+  name: string;
+  value: string;
 }

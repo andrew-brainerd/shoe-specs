@@ -3,17 +3,17 @@ import fs from 'fs';
 import puppeteer, { ElementHandle, PuppeteerLaunchOptions } from 'puppeteer';
 import { BASE_URL, MENS_SHOES_URL } from 'constants/brooks';
 import { Browser } from 'puppeteer';
-import { Product, ProductData, Widget, WidgetValue } from 'types';
+import { Definition, Product, ProductData, Widget, WidgetValue } from 'types';
 
 const pupOptions: PuppeteerLaunchOptions = {
   headless: true,
   defaultViewport: { width: 800, height: 1000 },
-  timeout: 10000
+  timeout: 100000
 };
 
-if (process.platform === 'win32') {
-  pupOptions.executablePath = 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe';
-}
+// if (process.platform === 'win32') {
+//   pupOptions.executablePath = 'C:/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe';
+// }
 
 (async () => {
   const browser = await puppeteer.launch(pupOptions);
@@ -29,11 +29,11 @@ if (process.platform === 'win32') {
         const href = await el.$eval('a', link => link.getAttribute('href'));
         const productUrl = `${BASE_URL}${href}`;
 
-        if (href) {
-          const productWidgets = await getProductData(browser, productUrl);
+        if (href) { //  && index === 0
+          const data = await getProductData(browser, productUrl);
 
-          if (productWidgets) {
-            productData.products.push(productWidgets);
+          if (data) {
+            productData.products.push(data);
           }
         }
       })
@@ -43,7 +43,7 @@ if (process.platform === 'win32') {
     await browser.close();
   }
 
-  productData.products.sort((prodA, prodB) => prodA.name < prodB.name ? -1 : 1);
+  productData.products.sort((prodA, prodB) => (prodA.name < prodB.name ? -1 : 1));
 
   fs.writeFile('preview.json', JSON.stringify(productData, null, 2), err => {
     if (err) {
@@ -65,14 +65,17 @@ async function getProductData(browser: Browser, productUrl: string) {
     const productPage = await openNewTab(browser, productUrl);
     const productName = await productPage.$eval('.m-buy-box-header__name', n => n.textContent);
     const widgets = await productPage.$$('.m-features-widget');
-
-    const widgetsData = await getWidgetsData(widgets)
+    const definitions = await productPage.$$('.m-definition-widget');
 
     const name = productName ? productName.trim() : 'Product Name';
 
+    const widgetsData = await getWidgetsData(widgets);
+    const definitionsData = await getDefinitionsData(definitions);
+
     const product: Product = {
       name,
-      widgetsData
+      widgetsData,
+      definitionsData
     };
 
     console.log(`Got specs for ${chalk.blue(product.name)}`);
@@ -120,7 +123,31 @@ async function getWidgetsData(widgets: ElementHandle<Element>[]) {
   );
 }
 
+async function getDefinitionsData(definitions: ElementHandle<Element>[]) {
+  return await Promise.all(
+    definitions.map(async definitionRow => {
+      try {
+        const definitionName = await definitionRow.$eval('.m-info-label p', p => p.textContent);
+        const definitionValue = await definitionRow.$eval('.a-type-p--caption', p => p.textContent);
+
+        const definitionData: Definition = {
+          name: definitionName || '',
+          value: definitionValue || ''
+        };
+
+        return definitionData;
+      } catch (e) {
+        return {
+          name: '',
+          value: ''
+        };
+      }
+    })
+  ).then(defs => defs.filter(def => def.name !== ''));
+}
+
 async function openNewTab(browser: Browser, url: string) {
+  // , { waitUntil: 'load', timeout: 0 }
   const page = await browser.newPage();
   await page.goto(url).catch(e => console.error('Navigation Error', e));
   await page.waitForNetworkIdle({ timeout: 5000 });
