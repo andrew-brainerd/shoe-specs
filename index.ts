@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import fs from 'fs';
-import puppeteer, { ElementHandle, PuppeteerLaunchOptions } from 'puppeteer';
+import puppeteer, { ElementHandle, Page, PuppeteerLaunchOptions } from 'puppeteer';
 import { BASE_URL, MENS_SHOES_URL } from 'constants/brooks';
 import { Browser } from 'puppeteer';
 import { Definition, Product, ProductData, Widget, WidgetValue } from 'types';
@@ -38,22 +38,26 @@ async function doOnRunningShit(browser: Browser) {
   const url = 'https://www.on-running.com/en-us/products/cloudboom-echo-57/womens/white-mint-shoes-57.98256';
   const womensCloudboomEchoPage = await openNewTab(browser, url);
 
-  try {
-    const quickFacts = await womensCloudboomEchoPage.$$('#mainContent #quick-facts article [class^="quickFactCard"]'); //  #quick-facts article > div [class^="content"]
-    
-    console.log('Quick Facts', quickFacts.length);
+  const quickFacts = await getQuickFacts(browser, womensCloudboomEchoPage);
 
-    await Promise.all(
+  console.log('Quick Facts:', quickFacts);
+}
+
+async function getQuickFacts(browser: Browser, page: Page) {
+  try {
+    const quickFacts = await page.$$('#mainContent #quick-facts article [class^="quickFactCard"]'); //  #quick-facts article > div [class^="content"]
+
+    return await Promise.all(
       quickFacts.map(async quckFact => {
         const factHeader = await quckFact.$eval('h3', h3 => h3.textContent);
         const factValue = await quckFact.$eval('p', p => p.textContent);
         const factIcon = await quckFact.$eval('svg', svg => svg.parentElement?.innerHTML);
 
-        console.log('Quick Fact:', {
-          factHeader,
-          factValue,
-          factIcon
-        });
+        return {
+          title: factHeader,
+          value: factValue,
+          icon: factIcon
+        };
       })
     );
   } catch (e) {
