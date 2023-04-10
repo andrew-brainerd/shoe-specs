@@ -35,17 +35,20 @@ const pupOptions: PuppeteerLaunchOptions = {
 })();
 
 async function doOnRunningShit(browser: Browser) {
-  const url = 'https://www.on-running.com/en-us/products/cloudboom-echo-57/womens/white-mint-shoes-57.98256';
-  const womensCloudboomEchoPage = await openNewTab(browser, url);
+  const mensShoesUrl = 'https://www.on-running.com/en-us/shop/mens/shoes';
+  const mensShoesPage = await openNewTab(browser, mensShoesUrl);
+  const productsList = await mensShoesPage.$$('#mainContent ul[data-test-id="productResults"] li article');
 
-  const quickFacts = await getQuickFacts(browser, womensCloudboomEchoPage);
+  // const url = 'https://www.on-running.com/en-us/products/cloudboom-echo-57/womens/white-mint-shoes-57.98256';
+  // const womensCloudboomEchoPage = await openNewTab(browser, url);
+  // const quickFacts = await getQuickFacts(browser, womensCloudboomEchoPage);
 
-  console.log('Quick Facts:', quickFacts);
+  console.log('Product Count:', productsList.length);
 }
 
 async function getQuickFacts(browser: Browser, page: Page) {
   try {
-    const quickFacts = await page.$$('#mainContent #quick-facts article [class^="quickFactCard"]'); //  #quick-facts article > div [class^="content"]
+    const quickFacts = await page.$$('#mainContent #quick-facts article [class^="quickFactCard"]');
 
     return await Promise.all(
       quickFacts.map(async quckFact => {
