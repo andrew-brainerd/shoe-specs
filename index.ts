@@ -8,8 +8,7 @@ import existingProductData from 'data.json';
 
 const pupOptions: PuppeteerLaunchOptions = {
   headless: true,
-  defaultViewport: { width: 800, height: 1000 },
-  timeout: 100000
+  defaultViewport: { width: 800, height: 1000 }
 };
 
 // if (process.platform === 'win32') {
@@ -17,7 +16,53 @@ const pupOptions: PuppeteerLaunchOptions = {
 // }
 
 (async () => {
+  const marketplace = process.argv[2];
+
+  if (!marketplace) {
+    console.log('Please provide a marketplace');
+    return -1;
+  }
+
   const browser = await puppeteer.launch(pupOptions);
+
+  if (marketplace === 'on-running') {
+    await doOnRunningShit(browser);
+  } else {
+    await doBrooksShit(browser);
+  }
+
+  await browser.close();
+})();
+
+async function doOnRunningShit(browser: Browser) {
+  const url = 'https://www.on-running.com/en-us/products/cloudboom-echo-57/womens/white-mint-shoes-57.98256';
+  const womensCloudboomEchoPage = await openNewTab(browser, url);
+
+  try {
+    const quickFacts = await womensCloudboomEchoPage.$$('#mainContent #quick-facts article [class^="quickFactCard"]'); //  #quick-facts article > div [class^="content"]
+    
+    console.log('Quick Facts', quickFacts.length);
+
+    await Promise.all(
+      quickFacts.map(async quckFact => {
+        const factHeader = await quckFact.$eval('h3', h3 => h3.textContent);
+        const factValue = await quckFact.$eval('p', p => p.textContent);
+        const factIcon = await quckFact.$eval('svg', svg => svg.parentElement?.innerHTML);
+
+        console.log('Quick Fact:', {
+          factHeader,
+          factValue,
+          factIcon
+        });
+      })
+    );
+  } catch (e) {
+    console.error('Error happened here', e);
+    await browser.close();
+  }
+}
+
+async function doBrooksShit(browser: Browser) {
   const mensShoePage = await openNewTab(browser, MENS_SHOES_URL);
 
   let productData = { products: [...existingProductData.products] } as ProductData;
@@ -30,7 +75,8 @@ const pupOptions: PuppeteerLaunchOptions = {
         const href = await el.$eval('a', link => link.getAttribute('href'));
         const productUrl = `${BASE_URL}${href}`;
 
-        if (href) { //  && index === 0
+        if (href) {
+          //  && index === 0
           const data = await getProductData(browser, productUrl);
 
           if (data) {
@@ -57,9 +103,7 @@ const pupOptions: PuppeteerLaunchOptions = {
       console.error(err);
     }
   });
-
-  await browser.close();
-})();
+}
 
 async function getProductData(browser: Browser, productUrl: string) {
   try {
@@ -148,10 +192,10 @@ async function getDefinitionsData(definitions: ElementHandle<Element>[]) {
 }
 
 async function openNewTab(browser: Browser, url: string) {
-  // , { waitUntil: 'load', timeout: 0 }
   const page = await browser.newPage();
   await page.goto(url).catch(e => console.error('Navigation Error', e));
-  await page.waitForNetworkIdle({ timeout: 5000 });
+  await page.waitForNetworkIdle(); // { timeout: 5000 }
+  // await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
   return page;
 }
